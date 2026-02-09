@@ -1,27 +1,59 @@
-# 🌤️ App de Clima
+# 🌤️ App de Clima (Weather App)
 
-Aplicação simples de clima desenvolvida em JavaScript puro, consumindo a API Open-Meteo.
+Uma aplicação web moderna, modular e responsiva para consultar a previsão do tempo em tempo real. O projeto consome a API da **Open-Meteo**, utiliza **ES Modules** para estruturação do JavaScript e possui um design limpo e centralizado.
 
-## 🚀 Tecnologias
+---
 
-- HTML5
-- CSS3
-- JavaScript (ES Modules)
-- Open-Meteo API
+## 📸 Sobre o Projeto
 
-## ⚙️ Funcionalidades
+Este aplicativo permite que o usuário digite o nome de uma cidade e receba instantaneamente informações sobre:
 
-- Busca de clima por cidade
-- Exibição de temperatura, vento e descrição
-- Loading e tratamento de erro
-- Persistência da última cidade com localStorage
+- 🌡️ Temperatura atual.
+- 💨 Velocidade do vento.
+- 🌥️ Condição climática (descrição textual baseada no código WMO).
 
-## ▶️ Como rodar
+O layout foi construído para centralizar o conteúdo na tela com um fundo gradiente moderno (`#74b9ff` a `#0984e3`), garantindo uma boa experiência visual.
 
-- Abra o projeto no VS Code
-- Use a extensão **Live Server**
-- Ou rode com qualquer servidor local
+---
 
-## 🌐 API
+## ✨ Funcionalidades
 
-https://open-meteo.com/
+- **Busca Inteligente:** Integração com API de Geocodificação para converter nomes de cidades em coordenadas.
+- **Persistência de Dados:** Salva a última cidade pesquisada no `localStorage` do navegador, carregando-a automaticamente ao reabrir o app.
+- **Feedback de Interface:** Mensagens de "Carregando..." e tratamento de erros (ex: cidade inválida).
+- **Modularidade:** Código JavaScript dividido em responsabilidades (API, UI, Utils).
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5:** Estrutura semântica.
+- **CSS3:** Flexbox, Gradients e design responsivo.
+- **JavaScript (ES6+):**
+  - `import` / `export` (ES Modules).
+  - `async` / `await` e `Fetch API`.
+  - Manipulação do DOM.
+- **API:** [Open-Meteo](https://open-meteo.com/) (Gratuita e sem necessidade de chave de API).
+
+---
+
+## 📂 Estrutura de Arquivos
+
+Para que o código funcione corretamente, organize seus arquivos e pastas da seguinte maneira:
+
+```text
+meu-projeto-clima/
+│
+├── index.html              # O arquivo HTML principal
+└── src/
+    ├── css/
+    │   └── style.css       # O arquivo CSS fornecido
+    └── js/
+        ├── main.js         # Ponto de entrada do JS (Event Listeners)
+        ├── api/
+        │   └── weatherService.js  # Lógica de conexão com a API
+        ├── ui/
+        │   └── renderWeather.js   # Funções de manipulação do DOM
+        └── utils/
+            └── formatters.js      # Formatadores de texto e temperatura
+```
